@@ -8,7 +8,7 @@ contract CampaignFactory {
     deployedCampaigns.push(newCampaign);
   }
 
-  function getDeplopyedCampaigns() public view returns (address[]) {
+  function getDeployedCampaigns() public view returns (address[]) {
     return deployedCampaigns;
   }
 }
@@ -66,7 +66,7 @@ contract Campaign {
 
     require(approvers[msg.sender]);
     require(!request.approvals[msg.sender]);
-    
+
     request.approvals[msg.sender] = true;
     request.approvalCount++;
   }
